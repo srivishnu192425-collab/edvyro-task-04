@@ -1,0 +1,38 @@
+{
+  "target": "http://localhost:3000",
+  "http_status": 403,
+  "missing_headers": [
+    {
+      "header": "Strict-Transport-Security",
+      "purpose": "Enforces HTTPS connections and prevents SSL-stripping attacks.",
+      "recommended": "max-age=31536000; includeSubDomains; preload"
+    },
+    {
+      "header": "Content-Security-Policy",
+      "purpose": "Restricts resource loading origins and mitigates XSS/data injection.",
+      "recommended": "default-src 'self'; script-src 'self'; object-src 'none';"
+    },
+    {
+      "header": "X-Frame-Options",
+      "purpose": "Mitigates Clickjacking by forbidding unauthorized framing.",
+      "recommended": "DENY or SAMEORIGIN"
+    },
+    {
+      "header": "X-Content-Type-Options",
+      "purpose": "Prevents MIME-type sniffing of response payloads.",
+      "recommended": "nosniff"
+    },
+    {
+      "header": "Referrer-Policy",
+      "purpose": "Controls how much referrer information is included with requests.",
+      "recommended": "strict-origin-when-cross-origin"
+    },
+    {
+      "header": "Permissions-Policy",
+      "purpose": "Restricts browser feature access (geolocation, camera, microphone).",
+      "recommended": "geolocation=(), camera=(), microphone=()"
+    }
+  ],
+  "present_headers": {},
+  "leaked_headers": {}
+}
